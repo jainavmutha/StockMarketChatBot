@@ -5,8 +5,8 @@ import matplotlib.pyplot  as plt
 import streamlit as st
 import yfinance as yf
 
-
-openai.api_key = ${{ secrets.API_KEY }}
+api_key = os.environ.get('API_KEY')
+openai.api_key = api_key
 
 def get_stockPrice(ticker):
     return str(yf.Ticker(ticker).history(period='1y').iloc[-1].Close)
