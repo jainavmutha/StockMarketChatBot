@@ -1,11 +1,11 @@
 import json
-import openai
+from openai import OpenAI
 import pandas as pd
 import matplotlib.pyplot  as plt
 import streamlit as st
 import yfinance as yf
 
-openai.api_key = open('API_KEY','r').read()
+client= OpenAI(api_key = open('API_KEY','r').read())
 
 def get_stockPrice(ticker):
     return str(yf.Ticker(ticker).history(period='1y').iloc[-1].Close)
@@ -165,7 +165,7 @@ user_input = st.text_input('your input')
 if user_input:
     try:
         st.session_state['messages'].append({'role': 'user','content':f'{user_input}'})
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model = 'gpt-3.5-turbo-0613',
             messages = st.session_state['messages'],
             functions = functions,
