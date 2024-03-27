@@ -6,7 +6,7 @@ import matplotlib.pyplot  as plt
 import streamlit as st
 import yfinance as yf
 
-api_key = os.environ.get('API_KEY')
+api_key = os.environ['API_KEY']
 openai.api_key = api_key
 
 def get_stockPrice(ticker):
