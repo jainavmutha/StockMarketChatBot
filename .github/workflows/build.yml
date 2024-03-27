@@ -22,6 +22,9 @@ jobs:
       run: |
         pip install openai==0.28
         pip install pandas
+        pip install matplotlib
+        pip install yfinance
+        pip install numpy
             
       
     - name: Run script
