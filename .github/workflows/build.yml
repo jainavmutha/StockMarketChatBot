@@ -19,7 +19,10 @@ jobs:
         python-version: '3.11'
       
     - name: Install dependencies
-      run: pip install openai==0.28
+      run: |
+        pip install openai==0.28
+        pip install pandas
+            
       
     - name: Run script
       env:
