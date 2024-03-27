@@ -25,6 +25,7 @@ jobs:
         pip install matplotlib
         pip install yfinance
         pip install numpy
+        pip install os
         pip install streamlit
             
       
