@@ -1,5 +1,7 @@
 name: Run Tests
+on: workflow_dispatch
 env:
   API_KEY: ${{ secrets.API_KEY }}
-run: |
-  run tests
+jobs: |
+  run-python:
+  
